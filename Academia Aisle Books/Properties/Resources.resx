@@ -121,9 +121,6 @@
   <data name="pageFlipSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\699337__valenspire__book_page_turn_08.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Pc_Unleashed_Unleashed_Books_256__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pc-Unleashed-Unleashed-Books.256 (1).ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="printReceiptSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\201276__chrisbrowne626__page-turning-sound-bit.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

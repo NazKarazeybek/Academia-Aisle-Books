@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Pc-Unleashed-Unleashed-Books.256 %281%29.ico</ApplicationIcon>
+    <ApplicationIcon>bookstoreicon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -90,8 +90,12 @@
     <None Include="Resources\201276__chrisbrowne626__page-turning-sound-bit.wav" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bookstoreicon.ico" />
+    <Content Include="icon.ico" />
     <Content Include="Pc-Unleashed-Unleashed-Books.256 %281%29.ico" />
+    <None Include="Resources\bookstoreicon.ico" />
     <None Include="Resources\Pc-Unleashed-Unleashed-Books.256 %281%29.ico" />
+    <None Include="Resources\icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

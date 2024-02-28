@@ -42,6 +42,9 @@ namespace Academia_Aisle_Books
         {
             InitializeComponent();
 
+            // Set the icon for the form
+            //this.Icon = new System.Drawing.Icon("bookstoreicon.ico");
+            
             // Disabling buttons except for the initial Calculate button
             printReceiptButton.Enabled = false;
             calculateChangeButton.Enabled = false;
