@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Pc-Unleashed-Unleashed-Books.256 %281%29.ico" />
+    <None Include="Resources\Pc-Unleashed-Unleashed-Books.256 %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

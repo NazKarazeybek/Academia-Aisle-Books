@@ -42,7 +42,7 @@ namespace Academia_Aisle_Books
         {
             InitializeComponent();
 
-            // Disabaling buttons except for the initial Calculate button
+            // Disabling buttons except for the initial Calculate button
             printReceiptButton.Enabled = false;
             calculateChangeButton.Enabled = false;
             calculateTotalButton.Enabled = true; // Initial button enabled
