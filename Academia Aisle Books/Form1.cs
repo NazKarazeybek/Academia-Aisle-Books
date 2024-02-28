@@ -177,6 +177,12 @@ namespace Academia_Aisle_Books
 
         private void newOrderButton_Click(object sender, EventArgs e)
         {
+
+            //adding sound effects
+            SoundPlayer player = new SoundPlayer(Properties.Resources.pageFlipSound);
+            player.Play();
+
+
             // Clear input boxes
             fantasyBookInput.Text = "";
             romanceBookInput.Text = "";
