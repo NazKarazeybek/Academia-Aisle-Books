@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Pc-Unleashed-Unleashed-Books.256 %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -85,6 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\201276__chrisbrowne626__page-turning-sound-bit.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pc-Unleashed-Unleashed-Books.256 %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
