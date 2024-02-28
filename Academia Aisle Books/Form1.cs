@@ -146,15 +146,18 @@ namespace Academia_Aisle_Books
             // Enable the next operation button
             calculateChangeButton.Enabled = true;
 
-
+            
             try
                 {
+
+                //convert text to integers
                     numOfFantasyBook = Convert.ToInt32(fantasyBookInput.Text);
                     numOfRomanceBook = Convert.ToInt32(romanceBookInput.Text);
                     numOfHorrorBook = Convert.ToInt32(horrorBookInput.Text);
 
-                    subtotal = fantasyBookPrice * numOfFantasyBook + romanceBookPrice * numOfRomanceBook + horrorBookPrice * numOfHorrorBook;
-                    taxAmount = taxRate * subtotal;
+                // Calculate subtotal, tax amount, and total price
+                subtotal = fantasyBookPrice * numOfFantasyBook + romanceBookPrice * numOfRomanceBook + horrorBookPrice * numOfHorrorBook;
+                taxAmount = taxRate * subtotal;
                     totalPrice = subtotal + taxAmount;
 
                     //to make it two decimals
@@ -163,8 +166,9 @@ namespace Academia_Aisle_Books
                     totalOutputLabel.Text = $"{totalPrice.ToString("C")}";
 
                 }
-                catch
-                {
+            //If an exception occurs, it sets the subtotalOutputLabel to display "ERROR" and clears the taxOutputLabel and totalOutputLabel.
+            catch
+            {
                     subtotalOutputLabel.Text = "ERROR";
                     taxOutputLabel.Text = string.Empty;
                     totalOutputLabel.Text = string.Empty;
