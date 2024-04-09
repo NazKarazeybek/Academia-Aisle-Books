@@ -106,100 +106,105 @@ namespace Academia_Aisle_Books
             string endingPhrase2 = "             Have A Lovely Day!";
 
 
-            receiptOutputLabel.Text =
+            receiptOutputLabel.Text = ""; // Clears text 
+            string receiptText = 
+                $"{shopName}\n" +
+                $"\n\n{receiptNumber}\n" +
+                $"{receiptDate}\n\n\n" +
+                $"Fantasy Books ↬      🕮{numOfFantasyBook}    {fantasyBookPrice * numOfFantasyBook:C}\n" +
+                $"Romance Books ↬   🕮{numOfRomanceBook}    {romanceBookPrice * numOfRomanceBook:C}\n" +
+                $"Horror Books ↬       🕮{numOfHorrorBook}    {horrorBookPrice * numOfHorrorBook:C}\n\n\n" +
+                $"Subtotal:                             {subtotal:C}\n" +
+                $"Tax:                                    {taxAmount:C}\n" +
+                $"Total:                                  {totalPrice:C}\n\n" +
+                $"\nTendered:                            {tenderedAmount:C}\n" +
+                $"Change:                              {changeAmount:C}\n\n" +
+                $"\n{endingPhrase1}" +
+                $"\n{endingPhrase2}\n";
 
-        $"{shopName}\n" +
-        $"\n\n{receiptNumber}\n" +
-        $"{receiptDate}\n\n\n" +
-        $"Fantasy Books ↬      🕮{numOfFantasyBook}    {fantasyBookPrice * numOfFantasyBook:C}\n" +
-        $"Romance Books ↬   🕮{numOfRomanceBook}    {romanceBookPrice * numOfRomanceBook:C}\n" +
-        $"Horror Books ↬       🕮{numOfHorrorBook}    {horrorBookPrice * numOfHorrorBook:C}\n\n\n" +
-        $"Subtotal:                             {subtotal:C}\n" +
-        $"Tax:                                    {taxAmount:C}\n" +
-        $"Total:                                  {totalPrice:C}\n\n" +
-        $"\nTendered:                            {tenderedAmount:C}\n" +
-        $"Change:                              {changeAmount:C}\n\n" +
-        $"\n{endingPhrase1}" +
-        $"\n{endingPhrase2}\n";
-             
-
-        }
-
-
-        private void calculateTotalButton_Click(object sender, EventArgs e)
-        {
-            //adding sound effects
-            SoundPlayer player = new SoundPlayer(Properties.Resources.pageFlipSound);
-            player.Play();
-
-            // Enable the next operation button
-            calculateChangeButton.Enabled = true;
-
-
-            try
+            foreach (char c in receiptText)
             {
-
-                //convert text to integers
-                numOfFantasyBook = Convert.ToInt32(fantasyBookInput.Text);
-                numOfRomanceBook = Convert.ToInt32(romanceBookInput.Text);
-                numOfHorrorBook = Convert.ToInt32(horrorBookInput.Text);
-
-                // Calculate subtotal, tax amount, and total price
-                subtotal = fantasyBookPrice * numOfFantasyBook + romanceBookPrice * numOfRomanceBook + horrorBookPrice * numOfHorrorBook;
-                taxAmount = taxRate * subtotal;
-                totalPrice = subtotal + taxAmount;
-
-                //to make it two decimals
-                subtotalOutputLabel.Text = $"{subtotal.ToString("C")}";
-                taxOutputLabel.Text = $"{taxAmount.ToString("C")}";
-                totalOutputLabel.Text = $"{totalPrice.ToString("C")}";
-
-            }
-            //If an exception occurs, it sets the subtotalOutputLabel to display "ERROR" and clears the taxOutputLabel and totalOutputLabel.
-            catch
-            {
-                subtotalOutputLabel.Text = "ERROR";
-                taxOutputLabel.Text = string.Empty;
-                totalOutputLabel.Text = string.Empty;
+                receiptOutputLabel.Text += c;
+                Thread.Sleep(13);
+                receiptOutputLabel.Refresh();
             }
         }
 
-        private void newOrderButton_Click(object sender, EventArgs e)
-        {
 
-            //adding sound effects
-            SoundPlayer player = new SoundPlayer(Properties.Resources.pageFlipSound);
-            player.Play();
+            private void calculateTotalButton_Click(object sender, EventArgs e)
+            {
+                //adding sound effects
+                SoundPlayer player = new SoundPlayer(Properties.Resources.pageFlipSound);
+                player.Play();
+
+                // Enable the next operation button
+                calculateChangeButton.Enabled = true;
 
 
-            // Clear input boxes
-            fantasyBookInput.Text = "";
-            romanceBookInput.Text = "";
-            horrorBookInput.Text = "";
-            tenderedInput.Text = "";
+                try
+                {
 
-            // Clear output areas
-            subtotalOutputLabel.Text = "";
-            taxOutputLabel.Text = "";
-            totalOutputLabel.Text = "";
-            changeOutputLabel.Text = "";
-            receiptOutputLabel.Text = "";
+                    //convert text to integers
+                    numOfFantasyBook = Convert.ToInt32(fantasyBookInput.Text);
+                    numOfRomanceBook = Convert.ToInt32(romanceBookInput.Text);
+                    numOfHorrorBook = Convert.ToInt32(horrorBookInput.Text);
 
-            // Reset variables to 0
-            numOfHorrorBook = 0;
-            numOfRomanceBook = 0;
-            numOfFantasyBook = 0;
-            subtotal = 0;
-            taxAmount = 0;
-            totalPrice = 0;
-            tenderedAmount = 0;
-            changeAmount = 0;
-        }
+                    // Calculate subtotal, tax amount, and total price
+                    subtotal = fantasyBookPrice * numOfFantasyBook + romanceBookPrice * numOfRomanceBook + horrorBookPrice * numOfHorrorBook;
+                    taxAmount = taxRate * subtotal;
+                    totalPrice = subtotal + taxAmount;
 
-        private void closeShopButton_Click(object sender, EventArgs e)
-        {
-            // Close the application
-            this.Close();
+                    //to make it two decimals
+                    subtotalOutputLabel.Text = $"{subtotal.ToString("C")}";
+                    taxOutputLabel.Text = $"{taxAmount.ToString("C")}";
+                    totalOutputLabel.Text = $"{totalPrice.ToString("C")}";
+
+                }
+                //If an exception occurs, it sets the subtotalOutputLabel to display "ERROR" and clears the taxOutputLabel and totalOutputLabel.
+                catch
+                {
+                    subtotalOutputLabel.Text = "ERROR";
+                    taxOutputLabel.Text = string.Empty;
+                    totalOutputLabel.Text = string.Empty;
+                }
+            }
+
+            private void newOrderButton_Click(object sender, EventArgs e)
+            {
+
+                //adding sound effects
+                SoundPlayer player = new SoundPlayer(Properties.Resources.pageFlipSound);
+                player.Play();
+
+
+                // Clear input boxes
+                fantasyBookInput.Text = "";
+                romanceBookInput.Text = "";
+                horrorBookInput.Text = "";
+                tenderedInput.Text = "";
+
+                // Clear output areas
+                subtotalOutputLabel.Text = "";
+                taxOutputLabel.Text = "";
+                totalOutputLabel.Text = "";
+                changeOutputLabel.Text = "";
+                receiptOutputLabel.Text = "";
+
+                // Reset variables to 0
+                numOfHorrorBook = 0;
+                numOfRomanceBook = 0;
+                numOfFantasyBook = 0;
+                subtotal = 0;
+                taxAmount = 0;
+                totalPrice = 0;
+                tenderedAmount = 0;
+                changeAmount = 0;
+            }
+
+            private void closeShopButton_Click(object sender, EventArgs e)
+            {
+                // Close the application
+                this.Close();
+            }
         }
     }
-}
