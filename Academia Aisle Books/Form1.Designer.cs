@@ -81,7 +81,6 @@
             this.titlePicture1.Size = new System.Drawing.Size(109, 63);
             this.titlePicture1.TabIndex = 1;
             this.titlePicture1.TabStop = false;
-            this.titlePicture1.Click += new System.EventHandler(this.titlePicture1_Click);
             // 
             // titleLabel
             // 
@@ -182,7 +181,7 @@
             this.totalOutputLabel.Name = "totalOutputLabel";
             this.totalOutputLabel.Size = new System.Drawing.Size(84, 30);
             this.totalOutputLabel.TabIndex = 17;
-            this.totalOutputLabel.Click += new System.EventHandler(this.totalOutputLabel_Click);
+            
             // 
             // taxOutputLabel
             // 
@@ -285,7 +284,7 @@
             this.subtotalLabel.Size = new System.Drawing.Size(88, 25);
             this.subtotalLabel.TabIndex = 7;
             this.subtotalLabel.Text = "Sub Total";
-            this.subtotalLabel.Click += new System.EventHandler(this.subtotalLabel_Click);
+            
             // 
             // horrorBookInput
             // 

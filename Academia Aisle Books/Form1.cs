@@ -35,7 +35,7 @@ namespace Academia_Aisle_Books
         double totalPrice;
         double tenderedAmount;
         double changeAmount;
-   
+
 
 
         public BackgroundImage()
@@ -44,7 +44,7 @@ namespace Academia_Aisle_Books
 
             // Set the icon for the form
             //this.Icon = new System.Drawing.Icon("bookstoreicon.ico");
-            
+
             // Disabling buttons except for the initial Calculate button
             printReceiptButton.Enabled = false;
             calculateChangeButton.Enabled = false;
@@ -108,7 +108,7 @@ namespace Academia_Aisle_Books
 
             receiptOutputLabel.Text =
 
-        $"{shopName}\n" +   
+        $"{shopName}\n" +
         $"\n\n{receiptNumber}\n" +
         $"{receiptDate}\n\n\n" +
         $"Fantasy Books ↬      🕮{numOfFantasyBook}    {fantasyBookPrice * numOfFantasyBook:C}\n" +
@@ -125,20 +125,6 @@ namespace Academia_Aisle_Books
 
         }
 
-        private void subtotalLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void totalOutputLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void titlePicture1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void calculateTotalButton_Click(object sender, EventArgs e)
         {
@@ -149,33 +135,33 @@ namespace Academia_Aisle_Books
             // Enable the next operation button
             calculateChangeButton.Enabled = true;
 
-            
+
             try
-                {
+            {
 
                 //convert text to integers
-                    numOfFantasyBook = Convert.ToInt32(fantasyBookInput.Text);
-                    numOfRomanceBook = Convert.ToInt32(romanceBookInput.Text);
-                    numOfHorrorBook = Convert.ToInt32(horrorBookInput.Text);
+                numOfFantasyBook = Convert.ToInt32(fantasyBookInput.Text);
+                numOfRomanceBook = Convert.ToInt32(romanceBookInput.Text);
+                numOfHorrorBook = Convert.ToInt32(horrorBookInput.Text);
 
                 // Calculate subtotal, tax amount, and total price
                 subtotal = fantasyBookPrice * numOfFantasyBook + romanceBookPrice * numOfRomanceBook + horrorBookPrice * numOfHorrorBook;
                 taxAmount = taxRate * subtotal;
-                    totalPrice = subtotal + taxAmount;
+                totalPrice = subtotal + taxAmount;
 
-                    //to make it two decimals
-                    subtotalOutputLabel.Text = $"{subtotal.ToString("C")}";
-                    taxOutputLabel.Text = $"{taxAmount.ToString("C")}";
-                    totalOutputLabel.Text = $"{totalPrice.ToString("C")}";
+                //to make it two decimals
+                subtotalOutputLabel.Text = $"{subtotal.ToString("C")}";
+                taxOutputLabel.Text = $"{taxAmount.ToString("C")}";
+                totalOutputLabel.Text = $"{totalPrice.ToString("C")}";
 
-                }
+            }
             //If an exception occurs, it sets the subtotalOutputLabel to display "ERROR" and clears the taxOutputLabel and totalOutputLabel.
             catch
             {
-                    subtotalOutputLabel.Text = "ERROR";
-                    taxOutputLabel.Text = string.Empty;
-                    totalOutputLabel.Text = string.Empty;
-                } 
+                subtotalOutputLabel.Text = "ERROR";
+                taxOutputLabel.Text = string.Empty;
+                totalOutputLabel.Text = string.Empty;
+            }
         }
 
         private void newOrderButton_Click(object sender, EventArgs e)
