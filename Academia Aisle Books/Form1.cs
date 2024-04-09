@@ -121,7 +121,7 @@ namespace Academia_Aisle_Books
         $"Change:                              {changeAmount:C}\n\n" +
         $"\n{endingPhrase1}" +
         $"\n{endingPhrase2}\n";
-
+             
 
         }
 
